@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'connections/new'
+
+  get 'connections/create'
+
+  get 'connections/show'
+
+  get 'connections/index'
+
+  get 'databases/index'
+
     # need this because Rails `rescue_from` doesn't catch ActionController::RoutingError
   unless Rails.env.development?
     match '*path',  :to => 'application#render_404', :via => :all
